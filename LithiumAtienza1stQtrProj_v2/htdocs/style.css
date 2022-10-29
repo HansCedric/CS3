@@ -72,7 +72,7 @@ button:hover {
 	top: 40%;
 	width: 20%;
 	height: 105%;
-	background-image: url("../images/Leftbackground.jpg");
+	background-image: url("../images/LeftBackground.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	border-top: 3px solid black;
@@ -87,7 +87,7 @@ button:hover {
 	top: 40%;
 	width: 20%;
 	height: 105%;
-	background-image: url("../images/Rightbackground.jpg");
+	background-image: url("../images/RightBackground.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	border-top: 3px solid black;
