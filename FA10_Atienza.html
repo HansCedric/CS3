@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title> F10_Atienza </title>
+		
+		<meta charset = "utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+		<style>
+		
+		p {
+		
+			display: block;
+		
+		}
+		
+		</style>
+	
+	</head>
+	
+	<body>
+	
+		<p id="randomNumber"> </p>
+		<p id="breakdown"> </p>
+		
+		<script>
+		
+			var random = Math.floor( Math.random() * 1000);
+			var x = Math.floor( random / 100 ) * 100;
+			var y = Math.floor(( random % 100) / 10) * 10;
+			if (x + y > 0) {
+				var z = Math.floor( random % (x + y));
+			}
+			else {
+				var z = random;
+			}
+			
+			document.getElementById("randomNumber").innerHTML = "Randomly generated number: " + random;
+			document.getElementById("breakdown").innerHTML = "Breakdown: " + x + ", " + y + ", " + z;
+		
+		</script>
+	
+	</body>
+
+
+</html>
