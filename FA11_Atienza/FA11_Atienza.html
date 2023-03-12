@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title> FA11_Atienza </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	</head>
+	
+	<body>
+	
+		<script>
+		
+			var a = prompt("First Number: ", "");
+			var b = prompt("Second Number: ", "");
+			var c = prompt("Third Number: ", "");
+			determineTriangle(a, b, c);
+			
+			function determineTriangle(a, b, c) {
+			
+				if( a == b && b == c && c == a ) {
+				
+					alert("The triangle is EQUILATERAL.");
+				
+				}
+				
+				else if ( a == b || b == c || c == a  ) {
+				
+					alert("The triangle is ISOSCELES.");
+				
+				}
+				
+				else {
+				
+					alert("The triangle is SCALENE.");
+				
+				}
+			
+			}
+		
+		</script>
+	
+	</body>
+
+</html>
