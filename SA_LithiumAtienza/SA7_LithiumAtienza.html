@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Numerology</title>
+		<!-- provide the necessary meta tags -->
+			<meta charset="UTF-8">
+			<meta name="description" content="SA7_LithiumAtienza">
+			<meta name="author" content="Atienza, Hans Cedric D.">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button onclick="buttonFunction()"> Click here to enter your name </button>
+     <script>
+	 
+		<!-- This function will get called when you press the button -->
+		function buttonFunction() {
+		
+			var name = prompt("Please enter your full name:", ""); //Asks the user for their full name that will be stored in the name variable
+			
+			document.getElementById("thename").innerHTML = name; //Assigns the element with the ID "thename" to have the value of the name variable to display the users full name in the body
+			
+			var nameLength = name.length; //Stores the value of the length of the name variable
+			
+			<!-- A while loop to reduce nameLength to be lesser than 10 by repeatedly adding the ones and tens digits -->
+			while(nameLength > 9) { //The while loop will only run if nameLength is greater than 9
+			
+				var firstDigit = Math.floor(nameLength / 10); //Get the value of the tens digit by getting the rounded down value of nameLength divided by 10
+				var secondDigit = nameLength % 10; //Get the value of the ones digit by getting the remainder of nameLength when it is divided by 10
+
+				nameLength = firstDigit + secondDigit; //We assign nameLength to be the sum of the first and second digits
+					
+				}
+				
+			<!-- Switch control statement to evaluate the value of nameLength and display the fortune based on the evaluation -->
+			switch(nameLength) {
+			
+				case 0: //Evaluated the value of nameLength
+					document.getElementById("fortune").innerHTML = "Bad Day"; //Displays the assigned fortune to the page
+					break;
+				
+				case 1:
+					document.getElementById("fortune").innerHTML = "Good Day";
+					break;
+
+				case 2:
+					document.getElementById("fortune").innerHTML = "Ominous Day";
+					break;
+
+				case 3:
+					document.getElementById("fortune").innerHTML = "Nice Day";
+					break;
+
+				case 4:
+					document.getElementById("fortune").innerHTML = "Terrible Day";
+					break;
+
+				case 5:
+					document.getElementById("fortune").innerHTML = "Fortunate Day";
+					break;
+
+				case 6:
+					document.getElementById("fortune").innerHTML = "Lucky Day";
+					break;
+
+				case 7:
+					document.getElementById("fortune").innerHTML = "Regular Day";
+					break;
+
+				case 8:
+					document.getElementById("fortune").innerHTML = "Alright Day";
+					break;					
+			
+				case 9:
+					document.getElementById("fortune").innerHTML = "Greatest Day of your life";
+					break;									
+				
+			}
+			
+		}
+		
+    </script>
+    
+</body>
+</html>

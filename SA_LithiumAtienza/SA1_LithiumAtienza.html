@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+		<!-- provide the necessary meta tags -->
+			<meta charset="UTF-8">
+			<meta name="description" content="SA1_LithiumAtienza">
+			<meta name="author" content="Atienza, Hans Cedric D.">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+	
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 id="coin" onclick="coinRandomizer()"> H </span></h2>   
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+		
+        <script>
+            /* do not forget to include comments to this script */
+            var getGuess = function() {
+                uGuess = prompt("Type H for head and T for tail","H");
+                uGuess.toUpperCase; // converting to an uppercase letter
+                (uGuess != "H" && uGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = uGuess;
+            }
+			
+			<!-- Function to randomize coin and compare if the user's guess is correct or not -->
+			function coinRandomizer() {
+			
+				var random = Math.floor( Math.random()*2); //Generates and stores a random number that could be 0 or 1
+				
+				<!-- if statement to evaluate the randomly generated number -->
+				if (random == 1) {
+					
+					document.getElementById("coin").innerHTML = "H"; //The coin will be heads if the randomly generated number is equal to 1
+					
+				}
+					
+				else {
+					
+					document.getElementById("coin").innerHTML = "T"; //The coin will be tails if the randomly generated number is not equal to 1
+					
+				}
+				
+				<!-- if statement to compare if the user's guess is correct or not -->
+				if ( document.getElementById("guess").innerHTML == document.getElementById("coin").innerHTML ){ //Compares the values of the element with an id of "guess" and the element with an id of "coin"
+				
+					alert("Your guess was correct! Congratulations"); //If the values are equal there will be an alert to the user that his/her guess is correct
+				
+				}
+				
+				else {
+
+					alert("Your guess was incorrect! Shame"); //If the values are not equal there will be an alert to the user that his/her guess is incorrect
+				
+				}
+					
+				
+			}
+
+        </script>
+		
+	</body>
+</html>
