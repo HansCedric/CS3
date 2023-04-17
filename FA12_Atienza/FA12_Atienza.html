@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<meta charset="UTF-8">
+		<meta name="description" content="FA12_Atienza">
+		<meta name="author" content="Atienza, Hans Cedric D.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<style>
+		
+			table {
+			
+				border: 1px solid black;
+				table-layout: fixed;
+			
+			}
+			
+			th {
+			
+				border: 1px solid black;
+			
+			}
+			
+			td {
+			
+				border: 1px solid black;
+				width: 20px;
+				text-align: center;
+			
+			}
+			
+			button {
+			
+				margin-top: 15px;
+				margin-bottom: 15px;
+			
+			}
+		
+		</style>
+	
+	</head>
+
+	<body>
+	
+		<p> [enter a number between 2 and 10] </p>
+		
+		<div>
+		<form>
+		
+		<input type="number" id="columnNum" min="2" max="10"> By <input type="number" id="rowNum" min="2" max="10">
+		
+		</form>
+		</div>
+		
+		<button onclick="generateTable()"> Click here when ready! </button>
+		<table id="table"> </table>
+		
+		<script>
+		
+			function generateTable() {
+			
+				var column = document.getElementById("columnNum").value;
+				var row = document.getElementById("rowNum").value;
+				var startingNum = 1;
+				var additionNum = 1;
+				var outputNum = 1;
+				
+				var output = " ";
+				
+				if( (row < 2) || (row > 10) || (column < 2) || (column > 10)) {
+				
+					alert("Please enter numbers between 2 and 10");
+				
+				}
+				
+				else {
+
+					for(var outer = 0; outer < column; outer++) {
+					
+						output = output + "<tr>";
+						outputNum = startingNum;
+						
+						for(var inner = 1; inner <= row; inner++) {
+							
+							output = output + "<td>" + outputNum + "</td>";
+							
+							additionNum = startingNum*inner;
+							outputNum = startingNum + additionNum;
+						
+						}
+						
+						startingNum++;
+						additionNum = startingNum;
+						
+						output = output + "</tr>"
+					
+					}
+					
+					}
+					
+				document.getElementById("table").innerHTML = output;
+				
+				}
+		
+		</script>
+	
+	</body>
+
+</html>
